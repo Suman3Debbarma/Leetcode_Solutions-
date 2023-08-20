@@ -1,0 +1,20 @@
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        if(root == null) 
+            return false;
+
+        return Symentric(root.left, root.right);    
+        
+    }
+    public boolean Symentric(TreeNode a, TreeNode b){
+        if(a == null && b == null) return true;
+
+        else if(a == null || b == null) return false;
+
+        else if(a.val != b.val) return false;
+
+        return Symentric(a.left, b.right) && Symentric(a.right, b.left);
+
+
+    } 
+}
